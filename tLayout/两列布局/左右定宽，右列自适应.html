@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #one-left {
+        background-color: #ccc;
+        float: left;
+        width: 100px;
+        height: 500px;
+      }
+      #one-right {
+        background-color: aquamarine;
+        height: 500px;
+        margin-left: 100px; /* 大于等于 #left 的宽度 */
+      }
+
+      #two-left {
+        background-color: #ccc;
+        float: left;
+        width: 100px;
+        height: 500px;
+      }
+      #two-right {
+        background-color: aquamarine;
+        height: 500px;
+        overflow: hidden; /*触发bfc达到自适应*/
+      }
+
+      #three-parent {
+        width: 100%;
+        display: table;
+        height: 500px;
+      }
+      .three-left,
+      .three-right {
+        display: table-cell; /* 利用单元格自动分配宽度 */
+      }
+      .three-left {
+        width: 100px;
+        background-color: #ccc;
+      }
+      .three-right {
+        background-color: aquamarine;
+      }
+
+      #four-parent {
+        position: relative;
+        height: 500px;
+      }
+      #four-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #f00;
+        width: 100px;
+        height: 500px;
+      }
+      #four-right {
+        position: absolute;
+        top: 0;
+        left: 100px; /*值大于等于#left的宽度*/
+        right: 0;
+        background-color: #0f0;
+        height: 500px;
+      }
+
+      #five-parent {
+        width: 100%;
+        height: 500px;
+        display: flex;
+      }
+      #five-left {
+        width: 100px;
+        background-color: #ccc;
+      }
+      #five-right {
+        flex: 1; /*均分了父元素剩余空间*/
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 左浮动 + 右margin-left -->
+    <div>
+      <div id="one-left">左列定宽</div>
+      <div id="one-right">右列自适应</div>
+    </div>
+
+    <!-- 左浮动 + 右overflow：hidden -->
+    <div style="margin-top: 100px;">
+      <div id="two-left">左列定宽</div>
+      <div id="two-right">右列自适应</div>
+    </div>
+
+    <!-- table -->
+    <div style="margin-top: 100px;" id="three-parent">
+      <div class="three-left">左列定宽</div>
+      <div class="three-right">右列自适应</div>
+    </div>
+
+    <!-- 绝对定位 -->
+    <div id="four-parent" style="margin-top: 100px;">
+      <div id="four-left">左列定宽</div>
+      <div id="four-right">右列自适应</div>
+    </div>
+
+    <!-- flex -->
+    <div id="five-parent" style="margin-top: 100px;">
+      <div id="five-left">左列定宽</div>
+      <div id="five-right">右列自适应</div>
+    </div>
+  </body>
+</html>
