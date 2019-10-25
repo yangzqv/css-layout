@@ -22,6 +22,67 @@
       border: 1px solid pink;
     }
 
+    .chui-img-parent {
+      margin-top: 50px;
+      height: 400px;
+      line-height: 400px;
+      font-size: 0;
+      text-align: center;
+      border: 1px solid #ccc;
+    }
+    .chui-img-parent img {
+      vertical-align: middle;
+    }
+
+    .chui-position-parent {
+      margin-top: 50px;
+      position: relative;
+      height: 200px;
+      border: 1px solid #ccc;
+    }
+
+    .chui-position-son {
+      position: absolute;
+      height: 100px;
+      background: chartreuse;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .center-parent {
+      position: relative;
+      border: 1px solid #ccc;
+    }
+    .center-parent .center-son {
+      position: absolute;
+      width: 100px;
+      height: 50px;
+      background: darkgreen;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .more-flex {
+      margin-top: 50px;
+      width: 100%;
+      height: 400px;
+      border: 1px solid #ccc;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .more-flex .more-son {
+      width: 50px;
+      height: 50px;
+      background: darkkhaki;
+    }
+    .more-flex .more-son-middle {
+      margin: 0 10px;
+    }
   </style>
 </head>
 <body>
@@ -35,6 +96,25 @@
   <div class="chui-duo-parent">
     我们称微信客户端给小程序所提供的环境为宿主环境。小程序借助宿主环境提供的能力，可以完成许多普通网页无法完成的功能。
     上一章中我们把小程序涉及到的文件类型阐述了一遍，我们结合 QuickStart 这个项目来讲一下这些文件是怎么配合工作的。
+  </div>
+
+  <div class="chui-img-parent">
+    <img src="./1.png" />
+  </div>
+
+  <div class="chui-position-parent">
+    <div class="chui-position-son">内容</div>
+  </div>
+
+  <!-- <div class="center-parent">
+    <div class="center-son"></div>
+  </div> -->
+
+  <!-- 任意个元素 -->
+  <div class="more-flex">
+    <div class="more-son"></div>
+    <div class="more-son more-son-middle"></div>
+    <div class="more-son"></div>
   </div>
 </body>
 </html>
