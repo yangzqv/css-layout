@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #one-left {
+      height: 500px;
+      background-color: #ccc;
+      float: left;
+    }
+    #one-right {
+      height: 500px;
+      background-color: cadetblue;
+      overflow: hidden;
+    }
+
+    #two-parent {
+      display: flex;
+    }
+
+    #two-left {
+      height: 500px;
+      background-color: #ccc;
+    }
+    #two-right {
+      height: 500px;
+      background-color: cadetblue;
+      flex: 1;
+    }
+
+    #three-parent {
+      display: grid;
+      grid-template-columns: auto 1fr;
+    }
+    #three-left {
+      height: 500px;
+      background-color: #ccc;
+    }
+    #three-right {
+      height: 500px;
+      background-color: cadetblue;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- float + overflow -->
+  <div id="one-parent">
+    <div id="one-left">
+      左侧不固定，将由内容撑开
+    </div>
+    <div id="one-right">右侧自适应</div>
+  </div>
+
+  <!-- flex -->
+  <div id="two-parent" style="margin-top: 100px;">
+    <div id="two-left">左列不固定</div>
+    <div id="two-right">右列自适应</div>
+  </div>
+
+  <!-- Grid -->
+  <div id="three-parent" style="margin-top: 100px;">
+    <div id="three-left">左列不固定</div>
+    <div id="three-right">右列自适应</div>
+  </div>
+</body>
+</html>
